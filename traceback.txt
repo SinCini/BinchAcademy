@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 471, in script
+    jump steet3Day1
+ScriptError: could not find label 'steet3Day1'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 471, in script
+    jump steet3Day1
+  File "renpy/ast.py", line 1757, in execute
+    rv = renpy.game.script.lookup(target)
+  File "renpy/script.py", line 918, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'steet3Day1'.
+
+Windows-10-10.0.19041
+Ren'Py 7.4.11.2266
+BinchAcademy 1.0
+Sat Apr  9 16:15:50 2022

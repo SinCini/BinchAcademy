@@ -1,0 +1,8 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 147: can't assign to literal
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Sun Apr 10 01:35:34 2022
