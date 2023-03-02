@@ -38,7 +38,7 @@ define gui.about = _p("""
 ## or semicolons.
 
 define build.name = "BinchAcademy"
-define build.itch_project = "SinCini/BinchAcademy1.0"
+
 
 ## Sounds and music ############################################################
 

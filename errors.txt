@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 147: can't assign to literal
+File "game/script.rpy", line 745: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    zoom 0.5
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sun Apr 10 01:35:34 2022
+Thu Mar  2 01:27:29 2023

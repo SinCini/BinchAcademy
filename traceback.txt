@@ -1,22 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 471, in script
-    jump steet3Day1
-ScriptError: could not find label 'steet3Day1'.
+  File "game/script.rpy", line 571, in script
+    menu:
+  File "game/script.rpy", line 572, in <module>
+    "Go to school early." if (taka_met ==true):
+NameError: name 'true' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 471, in script
-    jump steet3Day1
-  File "renpy/ast.py", line 1757, in execute
-    rv = renpy.game.script.lookup(target)
-  File "renpy/script.py", line 918, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'steet3Day1'.
+  File "game/script.rpy", line 571, in script
+    menu:
+  File "renpy/ast.py", line 1688, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "renpy/exports.py", line 1026, in menu
+    condition = renpy.python.py_eval(condition)
+  File "renpy/python.py", line 2276, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2269, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 572, in <module>
+    "Go to school early." if (taka_met ==true):
+NameError: name 'true' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 BinchAcademy 1.0
-Sat Apr  9 16:15:50 2022
+Thu Mar  2 01:50:18 2023
