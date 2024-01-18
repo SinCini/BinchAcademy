@@ -1,0 +1,92 @@
+label bedroomAMDay3:
+    scene bedroom
+    with fade
+    menu:
+        "Go to school early." if (taka_met ==True):
+            "I can't wait to hear Taka's voice to start my day off"
+            jump streetDay3
+        "Sleep in a little longer.":
+            #something about having an ample amount of time in the day anyways might as well hop in.
+            """
+                words and things
+                
+            """
+            jump hallwayDay3
+label streetDay3:
+    jump classroomDay3
+label hallwayDay3:
+    #Decide where you want to go visit before class (if you know the location)
+label classroomDay3:
+
+
+    if(seat == suzu):
+                #have suzu be reading a book and have her greet you depending on if you joined her club or not.
+        if(AstronomyClub == True):
+                "As you approach your seat you hear Suzu humming to herself."
+                suzu "Good morning [player_name]~~"
+                "You're shocked that she greeted you considering how she's acted the last couple of days."
+                me "Are you alright?"
+                suzu "Yea why wouldn't I be?"
+                me "No reason"
+                "You think to yourself that it probably would be good idea not to elaborate."
+                suzu "Anyways I better see you at the club room after class today. Convieniently it's the classroom 
+                just by the stairwell. We're celebrating the approval of our club!"
+                suzu "We don't exactly have a budget yet buuuut we're gonna do what we can."
+                suzu "I know you're new so you won't know anyone there, but as the club president I'll introduce you to everyone. 
+                They're all pretty nice!"
+                
+        else:
+                "You head straight to your seat."
+                #doesn't talk to MC since they didn't decide to join her club
+                #because of this MC can reach out to talk to her if he wants, like in the previous days
+                #
+                ""
+
+        
+label lunchbreakDay3:
+    #Probably the day that Rook gets questioned by the students why he keeps wearing a birdhead and people try to take it off of him.
+label classroomPMDay3:
+    "Today's lessons seem to be focused on party etiquette as well as the roles that each member played in a party and how it affects the others.
+    Mr Addock expressed the importance of every part of a group contributing to the party and those that don't do so are deemed failures in society."
+    "It seems like a pretty extreme perspective but this is a prestigious school so you won't question it for now."
+#need to edit so that you think about it in the past tense.
+    if(seat == suzu):
+        "In the midst of all this, you can't help but look in Suzu's direction every time she answers a question. You didn't really notice it the first day since you were so tense, 
+        but she seems to always be the first one to raise her hands to try to do so. Her disappointment is visible when she isn't chosen."
+    "Another day of class ends as you manage to avoid being called upon in class. Maybe he got the message that you're still adapting to this
+    new curriculum."
+    menu: 
+        "Head over to the clubroom." if(AstronomyClub== True):
+            "You head over to the clubroom at the request of Suzu."
+            $club_met = True
+            "Probably a good idea cause she'd give you grief the next day if you didn't."
+            jump astronomyRoomDay3
+        "Go Home":
+            if(AstronomyClub == True):
+                "Suzu did say to go to the club meeting, but you'd rather just go home and study. It's not like you have any obligation towards her or anything"
+            else:
+                "You go home."
+                jump streetPMDay3
+            
+
+label astronomyRoomDay3:
+    "You arrive in front of the club room and put your hand on the door to open it. Your hands quiver as you start to get cold feet so you try to turn around."
+    "Just as you do you feel a set of hands grab onto you, open the door and shove you into the room." 
+    #suzu comes from behind you and basically pushes you into the room
+    suzu """Listen up everyone, this is [player_name]
+    These are going to be your fellow clubmates from now on so make nice.
+
+    With that we have our final member so we can start! Naturally as club president I have a speech to make to celebrate the founding of this soon-to-be illustrious club
+    we stand as the astronomy club to find the stars and go further beyond."""
+    #speech stuff
+    """After the speech everyone gave an obligatory applause but everyone else certainly didn't share the same energy as Suzu did.
+    With that you've been forced to socialize with a bunch of randos. It's great that you're potentially making friends but you still feel lke you're being put out of your comfort zone.
+    Everyone here seems quite nice and were quick to talk to a newbie.
+    They joked around about getting roped into joining this club and they send their condolences as they assume you're in a similar position.
+    You don't really affirm or deny their suspicions but you imagine that they can read it in your expression.
+    Still, it's free food so you might as well try to enjoy yourself."""
+
+label endDay3:
+        "You walk home nothing eventful happens"
+
+jump BedroomAMDay4

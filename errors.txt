@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 745: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
-    zoom 0.5
-    ^
+The label lunchbreakDay4 is defined twice, at File "game/Day4.rpy", line 31:
+label lunchbreakDay4:
+and File "game/Day4.rpy", line 76:
+label lunchbreakDay4:
 
-Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar  2 01:27:29 2023
+
+Ren'Py Version: Ren'Py 8.1.0.23051307
+Wed Jun 14 23:40:18 2023

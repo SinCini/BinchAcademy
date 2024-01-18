@@ -197,8 +197,8 @@ label alleywayDay1:
 label hallwayDay1:
     scene hallway day
     with fade
-    "You’ve finally arrived, and after turning in your invitation to show you
-    accept the bell rings and you realize you have no idea how to get to class."
+    "You’ve finally arrived, and after turning in the proof that you've been acceptted into the school,
+ the bell rings and you realize you have no idea how to get to class."
     
     "You pass a few hallways, including the elective classrooms, but it’s clear
     you’re absolutely lost when you passed the same spooky hallway three times. 
@@ -206,6 +206,7 @@ label hallwayDay1:
 
     menu:
         "To the map on the wall.":
+            "You take a look at the map, and quickly figure out where your classroom was and promptly made your way over."
             jump classroomDay1
 
         "Towards the elective hallways.":
@@ -256,10 +257,10 @@ label electivesDay1:
     "There are two open doors-one leads to the art room, and the other leads to the auditorium. Which do you pick?"
     menu:
         "To the art room.":
-                jump artroomDay1
+                jump craftroomDay1
         "To the auditorium.":
                 jump auditoriumDay1
-label artroomDay1:
+label craftroomDay1:
     "You poke your head into the art room. There's only a single student in the
     room-in front of him is a miniature Carbuncle house model. He lifts his head
     when you take a step inside."
@@ -349,36 +350,8 @@ label recognitionDay1:
 label spookyDay1:
     "You decide to keep walking down the spooky hallway you earlier, if only
     because you're a little curious."
-    menu:
-        "Keep walking.":
-            scene spooky
-            with fade
-            show dino normal
-            n "Yo'. You're in the wrong hallway, kid."
-            "There's a rugged looking Miqo'te eyeing you with what looks like a
-            cigarette in her mouth. She screams of coolness, and looks a little
-            surprised to see you standing in front of her."
-            menu:
-                "S-sorry! I'll go!":
-                    jump runawayDay1
-                "S-sorry! Please don't kill me!":
-                    $dino_love +=1
-                    n "Kill?"
-                    "Her eyes go wide and then she bursts into laughter."
-                    n "Haha! You're pretty funny. I like that. What are you doing
-                    here, though?"
-                    me "I'm [player_name]. I think I'm lost."
-                    "She stares you down, looking very punk-rock and pretty and
-                    scary, and then stands up, walking closer..."
-                    "And past you."
-                    n "Come on, kid. I'll help you out, but you  owe me one."
-                    "She helps you out more than you expect, but you're mostly
-                    too nervous to talk to her otherwise. She seems nice for
-                    a school gangster, though."
-                    n "I'll see you around again, okay? Good luck in class."
-                    jump classroomDay1
-
-        "Peek into the library to get help.":
+    #Remember that Dino DLC goes here. 
+    "Upon reaching the end of the hall you manage to find a place that looks like a library"
             jump libraryDay1
 label libraryDay1:
     scene library
@@ -440,7 +413,6 @@ label classroomDay1:
             "No, she's actually saying it, too."
             menu:
                 "Greet her":
-                    $suzu_met = true
                     $suzu_love +=2
                     me "Hi. Did I miss anything important?"
                     suzu  "..."
@@ -478,7 +450,7 @@ label classroomPMDay1:
             "Go home immediately":
                 "Probably a good idea to get into a routine before I try something new. I'm still having some issues finding my way home and straying from school would only make that worse."
                 jump street3Day1
-            "Try to invite Suzu somewhere" if suzu_met==true:
+            "Try to invite Suzu somewhere" if suzu_met==True:
                 "You're new here and the best person to show you around would be your seatmate! Maybe they'll be willing
                 to show you around if you ask nicely. It wouldn't hurt to give it a try."                
                 me "Hey, [seat] you wanna go somewhere after class?" 
@@ -501,9 +473,9 @@ label classroomPMDay1:
                         "Yikes guess I'll just go home. She seems really mean. I don't know if I should keep talking to her or not."
                         #yikes alright guess I'll just go home
                         jump street3Day1
-            "Wander around to the field" if bomee_met == true:
+            "Wander around to the field" if bomee_met == True:
                "Maybe I can try to find that person"
-            "Blitzen" if blitzen_met ==true:
+            "Blitzen" if blit_met == True:
               "stuff"
               
         #Visit one of the other places I've been to
@@ -570,14 +542,16 @@ label bedroomAMDay2:
     "You wake up."
     "It's Tuesday. You're a little tired, but there's no time to waste!"
     menu:
-        "Go to school early." if (taka_met ==true):
-            "if you go early you might see that redhead again"
+        "Go to school early." if (taka_met ==True):
+            "If you go early you might see that redhead again"
             jump streetDay2
         "Sleep in a little longer.":
-            "It wouldn't hurt to get a few more moments of shut eye in order to "
+            "It wouldn't hurt to get a few more moments of shut eye in order to be completely rested for the morning"
+            #You managed to not sleep past your alarm this time and leisurely made your way to school
             jump classroomDay2
 
 label streetDay2:
+    #stuff about Taka 
     jump classroomDay2
 
 label classroomDay2:
@@ -616,7 +590,7 @@ label classroomPMDay2:
     "Time to take a look at what clubs are available." 
     if (seat == suzu):
         "You step into the hallway, but before you get out the door, you hear someone clear their throat."
-        if (suzu_love==3):
+        if (suzu_love>=3):
             n  "Hey, are...are you interested in joining a club?"
             "you turn around as you give a response"
             me "Of course! it's a great oppotunity to meet people and find people with similar passions!"
@@ -652,7 +626,7 @@ label classroomPMDay2:
                     
 label classroomDay3:
     if(seat == suzu):
-        if(AstronomyClub == true):
+        if(AstronomyClub == True):
                 "As you approach your seat you hear Suzu humming to herself."
                 suzu "Good morning [player_name]~~"
                 "You're shocked that she greeted you considering how she's acted the last couple of days."
@@ -670,7 +644,6 @@ label classroomDay3:
                 "You head straight to your seat."
                 "Suzu seems dejected."
                 ""
-    
     "Today's lessons seem to be focused on party etiquette as well as the roles that each member played in a party and how it affects the others.
     Mr Addock expressed the importance of every part of a group contributing to the party and those that don't do so are deemed failures in society."
     "It seems like a pretty extreme perspective but this is a prestigious school so you won't question it for now."
@@ -722,7 +695,7 @@ label entranceDay4:
                 "You rush over to her side and greet her"
                 me "Good morning! You need a hand with that?"
                 "She slightly jumps at your presence like she wasn't expecting anyone to reach out to help her."
-                suzu ""
+                suzu "OH, uhh hey there. Why would I need help from someone like you. I mean if you want to help sure "
             "Don't Help":
                 "You leisurely make your way through the entrance hoping to not catch her attention and make your way in. Luckily, she doesn't seem to notice under the large load."
                 "Shortly after arriving in the classroom ."
@@ -741,12 +714,13 @@ label classroomDay4:
     "Today's curriculum seems to be PE. It would make sense that a warrior of light in training would need to be physically able in addition to mentally sharp.
     Unfortunately due to your gamer status, you dread this coming event."
     if(seatmate== suzu):
-        show suzu gym smug at right
+        show suzu gym smug at right:
                 zoom 0.5
         "You look to your seatmate in hopes of having someone to share this struggle with."
-        "Unfortunately that doesn't seem to be the case as the bespectacled bookworm doesn't seem out of her element in the slightest. She's even doing stretches!!"
+        "Unfortunately, that doesn't seem to be the case as the bespectacled bookworm doesn't seem out of her element in the slightest. She's even doing stretches!!"
         "She's emmiting a strange pressure so you find it difficult to even approach her in this state."
-        "Track is the first activity and as soon as the signal was given... bang! she bolted forward like a bullet absolutely decimating the competition and having them eat her dust. To further this fact she took a victory lap just to show off."
+        "Track is the first activity and as soon as the signal was given... bang! she bolted forward like a bullet absolutely decimating the competition and having them eat her dust. 
+        To further this fact she took a victory lap just to show off."
         me "That was pretty incredible, what did you did out there. No one else even stood a chance."
         suzu "Well, it was only natural. I {i}am{/i} a student athlete after all. This is the bare minimum necessary to hold that title."
         me ""
@@ -825,6 +799,35 @@ label classroomDay7:
 label calamityDance:
     #suprise!! you don't win cause you've literally been here for a week and were interacting with 1 person or no people at all
     #
+    jump end
+   #         "Keep walking.":
+      #      scene spooky
+         #   with fade
+            #show dino normal
+    #        n "Yo'. You're in the wrong hallway, kid."
+      #      "There's a rugged looking Miqo'te eyeing you with what looks like a
+        #    cigarette in her mouth. She screams of coolness, and looks a little
+          #  surprised to see you standing in front of her."
+    #        menu:
+      #          "S-sorry! I'll go!":
+      #              jump runawayDay1
+     #           "S-sorry! Please don't kill me!":
+     #               $dino_love +=1
+      #              n "Kill?"
+      #              "Her eyes go wide and then she bursts into laughter."
+      #              n "Haha! You're pretty funny. I like that. What are you doing
+      #              here, though?"
+      #              me "I'm [player_name]. I think I'm lost."
+       #             "She stares you down, looking very punk-rock and pretty and
+        #            scary, and then stands up, walking closer..."
+        #            "And past you."
+        #            n "Come on, kid. I'll help you out, but you  owe me one."
+        #            "She helps you out more than you expect, but you're mostly
+         #           too nervous to talk to her otherwise. She seems nice for
+       #             a school gangster, though."
+        #            n "I'll see you around again, okay? Good luck in class."
+          #          jump classroomDay1
+    
 label end:
 return
 

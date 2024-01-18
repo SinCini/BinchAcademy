@@ -1,0 +1,14 @@
+label bedroomAMDay7:
+    scene bedroom
+    with fade
+label streetDay7:
+label classroomDay7:
+    #
+label calamityDance:
+    #suprise!! you don't win cause you've literally been here for a week and were interacting with 1 person or no people at all
+    #
+    jump end
+
+label end:
+return
+
